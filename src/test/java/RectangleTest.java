@@ -7,17 +7,7 @@ public class RectangleTest {
 	public void newRectangle_instantiatesCorrectly() {
 		Rectangle testRectangle = new Rectangle(2, 2);
 		assertEquals(true, testRectangle instanceof Rectangle);
-	}
-  
-	@Test 
-	public void newRectangle_setsLength() { 
-		Rectangle testRectangle = new Rectangle(2, 2); 
-		assertEquals(2, testRectangle.getLength()); 
-	} 
-	
-	@Test public void newRectangle_setsWidth() {
-		Rectangle testRectangle = new Rectangle(2, 2); 
-		assertEquals(2, testRectangle.getWidth()); 
+		// ...???
 	}
 	
 	@Test
@@ -27,8 +17,28 @@ public class RectangleTest {
 	}
 	
 	@Test
-	public void isSquare_allSidesEqual_true() {
+	public void isSquare_whenSquare_true() {
 		Rectangle testRectangle = new Rectangle(2, 2);
 		assertEquals(true, testRectangle.isSquare());
+	}
+
+
+
+
+	@Test
+	public void isSquare_allSidesEqual_true() {
+	Rectangle testRectangle = new Rectangle(2, 2);
+	assertEquals(true, testRectangle.isSquare());
+	}
+
+	@Test 
+	public void newRectangle_setsLength() { 
+		Rectangle testRectangle = new Rectangle(2, 2); 
+		assertEquals(2, testRectangle.getLength()); 
+	} 
+	
+	@Test public void newRectangle_setsWidth() {
+		Rectangle testRectangle = new Rectangle(2, 2); 
+		assertEquals(2, testRectangle.getWidth()); 
 	}
 }

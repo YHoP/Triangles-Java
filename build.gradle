@@ -1,9 +1,9 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-archivesBaseName = "ProgramfolderName"
+archivesBaseName = "Rectangle"
 version = '1.0'
-mainClassName = "ProgramName"
+mainClassName = "App"
 
 repositories {
     mavenCentral()

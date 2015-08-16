@@ -1,20 +1,15 @@
-import java.util.*;
-// import java.util.Map;
-// import java.util.HashMap;
+import java.util.Map;
+import java.util.HashMap;
 import java.io.Console;
 
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 
-public class Rectangle {
+public class Ractangle {
+	private int mLength;
+	private int mWidth;
   public static void main(String[] args) {
-	private Integer mLength;
-	private Integer mWidth;
-
-	public Rectangle(Integer length, Integer width) {
-		mLength = length;
-		mWidth = width;
 	}
 
 	public int getLength() {

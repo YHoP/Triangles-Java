@@ -6,28 +6,37 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class AppTest extends FluentTest{
+public class AppTest extends FluentTest {
   public WebDriver webDriver = new HtmlUnitDriver();
-  public WebDriver getDefaultDriver(){
-    return webDriver;
+
+  @Override
+  public WebDriver getDefaultDriver() {
+      return webDriver;
   }
 
   @ClassRule
   public static ServerRule server = new ServerRule();
 
-  // @Test
-  // public void rootTest(){
-  //   goTo("http://localhost:4567/");
-  //   assertThat(pageSource()).contains("Play Rock Paper Scissors!!");
-  // }
-  //
-  // @Test
-  // public void doesRockBeatPaper(){
-  //   goTo("http://localhost:4567/");
-  //   fill("#playerOne").with("rock");
-  //   fill("#playerTwo").with("paper");
-  //   submit(".btn");
-  //   assertThat(pageSource()).contains("Player two, you win!");
-  // }
+  @Test
+  public void rootTest() {
+      goTo("http://localhost:4567/");
+      assertThat(pageSource()).contains("Square finder");
+  }
 
+  @Test
+  public void squareTestIsASquare() {
+    goTo("http://localhost:4567/");
+    fill("#length").with("5");
+    fill("#width").with("5");
+    submit(".btn");
+    assertThat(pageSource()).contains("Your rectangle is a square!");
+  }
+
+  @Test 
+  public void squareTestIsNotASquare() { 
+    goTo("http://localhost:4567/"); 
+    fill("#length").with("7"); fill("#width").with("5"); 
+    submit(".btn"); 
+    assertThat(pageSource()).contains("Your rectangle isn't a square!"); 
+  }
 }
