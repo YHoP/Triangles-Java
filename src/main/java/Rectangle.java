@@ -6,10 +6,15 @@ import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 
-public class Ractangle {
+public class Rectangle {
 	private int mLength;
 	private int mWidth;
-  public static void main(String[] args) {
+  	
+  	// public static void main(String[] args) {}
+
+	public Rectangle(int length, int width){
+		mLength = length;
+		mWidth = width;
 	}
 
 	public int getLength() {
@@ -19,7 +24,6 @@ public class Ractangle {
 	public int getWidth() {
 	  return mWidth;
 	}
-  }	
 	
 	public boolean isSquare() {
 		return mLength == mWidth;
