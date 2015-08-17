@@ -7,17 +7,15 @@
 // import static spark.Spark.*;
 
 public class Triangles {
- private int mSideA;
- private int mSideB;
- private int mSideC;
- private int sumAB = mSideA + mSideB;
- private int sumBC = mSideB + mSideC;
- private int sumAC = mSideA + mSideC;
+ private int mSideA, mSideB, mSideC, sumAB, sumBC, sumAC;
 
 public Triangles(int sideA, int sideB, int sideC) {
 	mSideA = sideA;
 	mSideB = sideB;
 	mSideC = sideC;
+	sumAB = mSideA + mSideB;
+	sumBC = mSideB + mSideC;
+	sumAC = mSideA + mSideC;
 }
 
 public int getSideA() {
@@ -37,14 +35,13 @@ public String triangleType(){
 		return "That's not a triangle! Try again.";
 	} else if (isEquilateral()){
 		return "Equilateral";
-	} else if (isIsoscelese()){
-		return "Isoscelese";
+	} else if (isIsosceles()){
+		return "Isosceles";
 	} else if (isScalene()){
 		return "Scalene";
 	} else {
 		return "Your code has issue";
 	}
-
 }
 
 public boolean isEquilateral(){
@@ -55,7 +52,7 @@ public boolean isEquilateral(){
 	}
 }
 
-public boolean isIsoscelese() {
+public boolean isIsosceles() {
 	if((mSideA == mSideB) || (mSideA == mSideC) || (mSideB == mSideC)) {
 		return true;
 	} else {
@@ -64,15 +61,11 @@ public boolean isIsoscelese() {
 }
 
 public boolean isScalene() {
- 	boolean result = false;
-	while(isTriangle()){
-		if (!isEquilateral() && !isIsoscelese()){
-			result = true;
+	if (!isEquilateral() && !isIsosceles()){
+			return true;
 		} else {
-			result = false;
-		}
+			return false;
 	}
-	return result;
 }
 
 public boolean isTriangle(){
