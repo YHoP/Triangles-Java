@@ -34,6 +34,8 @@ public class AppTest extends FluentTest {
   @Test
   public void isTriangleEquilateral() {
     goTo("http://localhost:4567/");
+    fill("#username").with("morgan");
+    submit(".btn");
     fill("#sideA").with("2");
     fill("#sideB").with("2");
     fill("#sideC").with("2");
