@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-archivesBaseName = "Rectangle"
+archivesBaseName = "triangles"
 version = '1.0'
 mainClassName = "App"
 
@@ -10,9 +10,7 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.sparkjava', name: 'spark-core', version: '2.1'
-    compile group: 'org.apache.velocity', name: 'velocity', version: '1.7'
+  
     testCompile group: 'junit', name: 'junit', version: '4.+'
-    testCompile group: 'org.fluentlenium', name: 'fluentlenium-core', version: '0.10.3'
-    testCompile group: 'org.fluentlenium', name: 'fluentlenium-assertj', version: '0.10.3'
+
 }
